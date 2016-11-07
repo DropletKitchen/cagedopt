@@ -111,6 +111,7 @@ Left: 3D-model in openSCAD. Right: Parts for laser cutting.
 One has an overwhelming choice of optics components. Think of which
 magnification you need for the objective. To focus the image onto the
 camera we use a F=50mm double achromat lens, but a simple F=100mm lens
+
 works equally well (but needs more space). As the rig uses standard 1"
 optics, any camera can be mounted with appropriate adapters. We have
 chosen the FireflyMV because it uses USB 2.0, has a global shutter and
@@ -122,9 +123,10 @@ runs well on Ubuntu Linux (and Win) and even on Raspberry Pi. Such
 but bright illumination and minimising the exposure time yields sharp
 images of fast events, which is good enough for most microfluidics
 applications. One can enhance the camera greatly by strobing the LED
-light source (see here for an example (PUT LINK IN)).  If you need
-high-speed video, you will have to use a true 'fast camera' with
-on-board RAM, which start around 6k GBP (eg a Miro Phantom).
+light source (see here for an example:
+https://github.com/DropletKitchen/strobe).  If you need high-speed
+video, you will have to use a true 'fast camera' with on-board RAM,
+which start around 6k GBP (eg a Miro Phantom).
 
 For assembly you have to first attach the lens to the camera such that
 it is focused to 'infinity'. Get the camera to run on a computer,
