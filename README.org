@@ -1,0 +1,199 @@
+* Microfluidics Imaging Rigs with Caged Optics
+
+*This page describes how to build simple optics rigs for microfluidics applications based on professional-grade caged optics sytems and scientific cameras.*
+
+This is a [[https://DropletKitchen.github.io][DropletKitchen]] project.
+
+If not stated otherwise, the designs and documentation in this repository
+is Copyright (c) 2016 Martin Fischlechner and DropletKitchen Contributors,
+and made available under a
+[[https://creativecommons.org/licenses/by/4.0/][Creative Commons Attribution 4.0 International (CC BY 4.0)]] License.
+** Introduction
+This project shows one way to package caged optics into systems with a
+small footprint and highly functional design. The example here is a
+simple microscope-setup for microfluidics experimentation.  Instead of
+using an optics table, or an all-metal optics breadboard, a
+combination of laser-cut 5mm acrylic sheets with M6 nuts and bolts are
+used to assemble rigid and customized optical instruments. The system
+uses a simple, magnetic kinematic design for the x,y,z-stage and a
+high-power LED with cheap plastic focusing optics for illumination.
+The optics is based on an infinity-corrected objective, a lens and a
+global-shutter CCD or CMOS-camera to obtain videos or images. The
+output of an infinity-corrected objective (they usually have an
+'infinity' symbol engraved) is a parallel beam of light. It therefore
+needs a lens to create an image. The advantage is that between the
+objective and the lens many optic components can be placed; the design
+can therefore also be used as a starting point for more complex
+setups, e.g.  for measuring fluorescence. To get an idea which optics
+components are available and how much they cost, have a look at the
+websites of optics companies, for example Thorlabs
+(https://www.thorlabs.com/navigation.cfm).
+
+
+
+#+CAPTION: Image of the rig at several stages of the build. A] bottom plate with the optics and an LED-driver enclosed in a little box. B] plate with LED and magnets to hold the stage. This part is used to immobilise the optics by clamping. C] XYZ-stage: Z and tilt is adjusted with three optics screws. X-Y movement is controlled with an inexpensive xy-stage. D] the fully assembled rig.
+[[images/FireflyBottomUpAssembly.jpeg]]
+#+BEGIN_QUOTE
+Image of the rig at several stages of the build. A] bottom plate with
+the optics and an LED-driver enclosed in a little box. B] plate with
+LED and magnets to hold the stage. This part is used to immobilise the
+optics by clamping. C] XYZ-stage: Z and tilt is adjusted with three
+optics screws. X-Y movement is controlled with an inexpensive
+xy-stage. D] the fully assembled rig.
+#+END_QUOTE
+
+
+** Design
+The model ([[./files/RigCageOpticsOpenSCAD.scad]]) was first developed in
+openSCAD (http://www.openscad.org/) and sliced for lasercutting. Later
+modifications were done in a .dxf-file with Draftsight
+(http://www.3ds.com/products-services/draftsight-cad-software/free-download/). Starting
+with a 3D-model is convenient to play with overall dimensions and
+shapes, but the design is quicker to modify in 2D-CAD at later stages
+([[./files/RigCageOpticsPartsForCutting.dxf]]). The standard fixtures for
+optics on optics tables are M6, spaced 25mm apart. To have a flexible
+way of mounting (additional) parts, holes of 6mm in diameter with a
+spacing of 12.5mm (center to center) are additionally embedded into
+the design where possible. This makes setups adaptable and extendable.
+
+#+CAPTION: Left: 3D-model in openSCAD. Right: Parts for laser cutting.
+[[images/RigCageOpticsOpenSCADandDXF.jpeg]]
+#+BEGIN_QUOTE
+Left: 3D-model in openSCAD. Right: Parts for laser cutting.
+#+END_QUOTE
+** Materials
+
+| Item                                                                  |          number | bought from               | part number    | approx cost (£/euro) |
+|-----------------------------------------------------------------------+-----------------+---------------------------+----------------+----------------------|
+| Structural components                                                 |                 |                           |                |                      |
+|-----------------------------------------------------------------------+-----------------+---------------------------+----------------+----------------------|
+| M6 Hex Screws (different lengths, eg l=16,20,25,30mm for flexibility) |            many | RS or other hardware shop |                |                   NA |
+| M6 Nuts, Washers, 'shake-proof washers'                               |            many | RS or other hardware shop |                |                   NA |
+| M6 Threaded Rods                                                      |     4x (~100mm) | hardware shop             |                |                   NA |
+| M6 Threaded Rods                                                      |     3x (~150mm) | hardware shop             |                |                   NA |
+| M3 Screws, Nuts and Washers (different lengths)                       |            many | RS or other hardware shop |                |                   NA |
+| 3mm Acrylic Sheet (410x280mm)                                         |     1 pack of 5 | www.techsoft.co.uk        | TAAC3-R3-5-COL |                   18 |
+| 5mm Acrylic Sheet (410x280mm)                                         |     1 pack of 5 | www.techsoft.co.uk        | TAAC3-R5-5-COL |                   25 |
+| Double-Sided Tape (3M, 468MP or 467MP), optional but nice to have     |               1 | RS                        | 842-1089       |                   50 |
+|-----------------------------------------------------------------------+-----------------+---------------------------+----------------+----------------------|
+| XYZ-stage                                                             |                 |                           |                |                      |
+|-----------------------------------------------------------------------+-----------------+---------------------------+----------------+----------------------|
+| Fine Adjustment Screw with Knob, 1/4"-80, 2.00" Long                  |               3 | Thorlabs                  | FAS200         |                   17 |
+| Locking Phosphor-Bronze Bushing with Nut, 1/4"-80, L=0.50"            |               3 | Thorlabs                  | N80L6P         |                   21 |
+| XY-stage from eBay (search 'microscope stage')                        |               1 | eBay                      |                |               max 20 |
+| Eclipse 20mm Threaded Hole Neodymium Ring Magnet                      |               1 | RS                        | 792-4565       |                    7 |
+| Eclipse 20mm Neodymium Disc Magnet (3 each; we use 5 for assembly)    |               2 | RS                        | 695-0184       |                   22 |
+| Short Steel Rods (magnetisable) 20-40mm long, 5-6mm in diameter       |               2 | NA                        | NA             |                   NA |
+|-----------------------------------------------------------------------+-----------------+---------------------------+----------------+----------------------|
+| Light                                                                 |                 |                           |                |                      |
+|-----------------------------------------------------------------------+-----------------+---------------------------+----------------+----------------------|
+| RECOM POWER RCD-24-0.70/W/X3 LED Driver Adjustable                    |               1 | Farnell                   | 1793223        |                   13 |
+| OPULENT  REBEL-STAR-ES-NW200  High Brightness LED                     |               1 | Farnell                   | 2110405        |                    4 |
+| Polymer Optics 141/180, Lens Assembly                                 |               1 | RS                        | 665-6573       |                    3 |
+| Stripboard, 10kOhm Potentiometer                                      |                 | eg Farnell, RS or other   |                |                   NA |
+| Slide Switch, Male/Female 0.1" PCB Connectors                         |                 | eg Farnell, RS or other   |                |                   NA |
+| Sugru for isolation of wire connections...                            |               1 | cpc Farnell               | MK00041        |                    6 |
+| Standard Epoxy Glue                                                   |              NA |                           | NA             |                   NA |
+|-----------------------------------------------------------------------+-----------------+---------------------------+----------------+----------------------|
+| Optics                                                                |                 |                           |                |                      |
+|-----------------------------------------------------------------------+-----------------+---------------------------+----------------+----------------------|
+| RMS10X - 10X Olympus Plan Achromat Objective, 0.25 NA, 10.6 mm WD     |               1 | Thorlabs                  | RMS10X         |                  285 |
+| RMS to SM1 adapter                                                    |               1 | Thorlabs                  | SM1A3TS        |                   16 |
+| Cage Cube-Mounted Penta Prism                                         |               1 | Thorlabs                  | CCM1-PS932/M   |                  110 |
+| LENS: F=100mm 1"diameter (cheaper) OR Achromatic Doublet f=50 mm, Ø1" |               1 | Thorlabs                  | AC254-050-A-ML |                   70 |
+| 1" Lens tubes (1 adjustable + other (adjust Lens-Camera-distance))    | depends on Lens | look at Thorlabs          |                |                  ~50 |
+| Adapter with External C-Mount Threads and Internal SM1 Threads        |               1 | Thorlabs                  | SM1A9          |                   14 |
+| Global Shutter Camera: eg Firefly MV USB2.0 Camera (Point Grey)       |               1 | Point Grey                | FMVU-03MTM-CS  |                 ~200 |
+|-----------------------------------------------------------------------+-----------------+---------------------------+----------------+----------------------|
+
+** Assembly
+*** Optics
+One has an overwhelming choice of optics components. Think of which
+magnification you need for the objective. To focus the image onto the
+camera we use a F=50mm double achromat lens, but a simple F=100mm lens
+works equally well (but needs more space). As the rig uses standard 1"
+optics, any camera can be mounted with appropriate adapters. We have
+chosen the FireflyMV because it uses USB 2.0, has a global shutter and
+can be triggered, its image binned, etc. (Firefly MV Technical
+Reference Manual, https://www.ptgrey.com/support/downloads/10116). It
+runs well on Ubuntu Linux (and Win) and even on Raspberry Pi. Such
+'inexpensive' scientific cameras will never give you high-speed video
+(max ~ 400fps with the FireflyMV when binning to a very small image),
+but bright illumination and minimising the exposure time yields sharp
+images of fast events, which is good enough for most microfluidics
+applications. One can enhance the camera greatly by strobing the LED
+light source (see here for an example (PUT LINK IN)).  If you need
+high-speed video, you will have to use a true 'fast camera' with
+on-board RAM, which start around 6k GBP (eg a Miro Phantom).
+
+For assembly you have to first attach the lens to the camera such that
+it is focused to 'infinity'. Get the camera to run on a computer,
+connect the camera and lens with a tube (the distance between lens
+camera-chip should equal the focal length of the lens; you will need
+an adjustable SM1 lens tube in your assembly to get it right). Then
+focus the image on a distant object (e.g. a tree/house outside
+somewhere, or a feature in a far-away corner of the lab). Fix the
+distance with a locking ring. Now connect this assembly with the 30 mm
+cage containing a Penta Prism or a 45 degree mirror, screw in your
+objective (with the right adapter) and you are done.
+
+*** Structure
+Assembling the rig itself is pretty straightforward; have a look at
+the image above. Make sure that your components fit - if you change
+the design, just measure components with a caliper and use exactly
+those dimensions for holes etc. Laser cut components usually result in
+a tight fit. The optics assembly is held in place by clamping it
+between the bottom plate and the upper part using M6 threaded rod
+posts. Use washers, or better 'shake-proof washers' where possible.
+
+The x,y,z-stage is mounted on three optics screws with spherical ends
+in a kinematic fashion - this defines the position of the stage by
+resting on 6 points of contact. This is ideally 3 points on one, 2 on
+the next, and one on the third. Here strong magnets are used to fix
+the stage on its support - a ring magnet on the first side (a small
+cheat but works well), 2 stacked disk magnets that magnetize two small
+steel rods on top, and a stack of three disk magnets on the third
+point.  This assembly alone allows you not only to control z distance
+(focus), but you can tilt and therefore have some movement in x,y. For
+convenience, adding an inexpensive x,y stage is recommended. They all
+differ, so make sure you adapt the files accordingly.
+
+*** Light
+For the lightsource, a star-shaped white high power LED is used which
+is controlled by an adjustable LED driver (Recom RCD-24-0.70,
+http://www.recom-power.com/pdf/Lightline/RCD-24.pdf). An M3 screw acts
+as a heat sink and also holds the LED in place. A potentiometer is
+used to control brightness. Along with an on/off switch, the
+components are soldered onto a stripboard and then packaged in an
+acrylic enclosure. It does not have to bear large loads, so the
+enclosure is based on cut acrylic sheets with double-sided tape added
+to one side before cutting. This allows the structural components to
+be bonded together.  Inexpensive plastic lenses are used to focus the
+LED light onto the chip. For assembly, just use a dab of epoxy
+glue. Do not use 'Superglue', as the cyanoacrylate vapours cloud the
+optics components over time.  Change the distance between LED and the
+stage such that the image on the camera is overexposed when the LED is
+fully on and the camera is set to the smallest exposure time
+possible. This allows you to get the best possible images of
+fast-moving objects with your setup. Below is the circuit diagram for
+wiring if you use the Recom LED-driver. If you want an on/off switch,
+just wire it to the voltage or ground wire. Almost any power supply
+will do (>=1A, 5-36V).
+
+
+#+CAPTION: Circuit diagram for the Recom LED driver.
+[[images/LEDDriverSchematics.png]]
+#+BEGIN_QUOTE
+Circuit diagram for the Recom LED driver.
+#+END_QUOTE
+
+** Adapt the design to other components
+It is relatively easy to adjust designs to other components. Use a
+caliper to measure parts and change design files accordingly.
+
+#+CAPTION: Rig with a Miro EX2 fast camera and an objective turret. The file for laser cut parts can be found here ([[file:./files/MiroEX2RigLasercutParts.dxf]])
+[[images/MiroSystem.jpeg]]
+#+BEGIN_QUOTE
+Rig with a Miro EX2 fast camera and an objective turret. The file for
+laser cut parts can be found here ([[./files/MiroEX2RigLasercutParts.dxf]]).
+#+END_QUOTE

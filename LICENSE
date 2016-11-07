@@ -1,6 +1,19 @@
+
+If not stated otherwise, the designs and documentation in this
+repository is
+
+Copyright (c) 2016 Martin Fischlechner and DropletKitchen Contributors
+
+and made available under a Creative Commons Attribution 4.0
+International (CC BY 4.0) License [1].
+
+
+Any original source code in this project is distributed under the
+following license:
+
 MIT License
 
-Copyright (c) 2016 DropletKitchen
+Copyright (c) 2016 Martin Fischlechner and DropletKitchen Contributers
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,3 +32,6 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+
+[1] See https://creativecommons.org/licenses/by/4.0/
